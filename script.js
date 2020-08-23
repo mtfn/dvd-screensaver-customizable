@@ -71,18 +71,29 @@ function display (rect, canvas, context) {
   }
 
   // Now to define what the directions actually mean
-  if (direction === 'ne') {
-    rect.x += speed
-    rect.y -= speed
-  } else if (direction === 'nw') {
-    rect.x -= speed
-    rect.y -= speed
-  } else if (direction === 'se') {
-    rect.x += speed
-    rect.y += speed
-  } else if (direction === 'sw') {
-    rect.x -= speed
-    rect.y += speed
+  switch(direction) {
+    case 'ne':
+      rect.x += speed
+      rect.y -= speed
+    break
+
+    case 'nw':
+      rect.x -= speed
+      rect.y -= speed
+    break
+
+    case 'se':
+      rect.x += speed
+      rect.y += speed
+    break
+
+    case 'sw':
+      rect.x -= speed
+      rect.y += speed
+    break
+
+    default:
+      // This shouldn't ever happen
   }
 
   // Clear canvas
